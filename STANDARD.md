@@ -1,5 +1,5 @@
 # flanck-standard
-The flanck standard v1.0.0.
+The flanck standard v1.1.0.
 
 ## Idea
 
@@ -63,14 +63,16 @@ which contains the bits `s1(0)...s1(n1-1) + s2(0)...s2(n2-1)`
 
 ### Proper execution of an instruction
 
-- proper execution can either mean all checks of an instruction succeeded
-  or if a instruction mutated any columns
+- proper execution means if an instruction mutated any columns
 - mutated any column, means that the instruction can have removed bits of one column but added the same bits to it in the same instruction
 ```js
-// counts as proper mutation of columns
+// counts as proper mutation of columns:
 [1]:[1]
+// does not count:
+:
+[]:[][]
 ```
-> **_NOTE:_** The syntax will be explained later on in detail.
+> **_NOTE:_** The syntax will be explained later in detail.
 
 ### Program flow
 
@@ -143,4 +145,4 @@ The modern syntax, is easier to read, but has small limitations.
 ### Input and output
 
 This document does not define any standard for input or output,
-but any columns can be used for input or ouput.
+but any stack holders can be used for input or ouput.
